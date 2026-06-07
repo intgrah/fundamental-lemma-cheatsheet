@@ -2,7 +2,15 @@
 #show: conf
 
 #let (absurd, case, fst, inl, inr, rec, snd, succ, zero) = (
-  "absurd", "case", "fst", "inl", "inr", "rec", "snd", "succ", "zero",
+  "absurd",
+  "case",
+  "fst",
+  "inl",
+  "inr",
+  "rec",
+  "snd",
+  "succ",
+  "zero",
 ).map(math.sans)
 #let ang(..xs) = $lr(chevron.l #xs.pos().join(math.comma) chevron.r)$
 
@@ -77,7 +85,7 @@ $
   #let setR(cond) = ${ t mid(|) exists v. med t ~>^* v #cond }$
   $
                     R_1 & = #setR([]) \
-                    R_0 & = #setR([]) \
+                    R_0 & = emptyset \
                    R_NN & = #setR([]) \
        R_(sigma -> tau) & = #setR($and forall s in R_sigma. med v med s in R_tau$) \
     R_(sigma times tau) & = #setR($and fst v in R_sigma and snd v in R_tau$) \
@@ -85,7 +93,7 @@ $
   $
 ]
 
-#tagged([Closure], $ tack t : T and t ~>^* t' ==> (t in R_T <==> t' in R_T) $)
+#tagged([Closure], $ dot.c tack t : T and t ~>^* t' ==> (t in R_T <==> t' in R_T) $)
 
 = Fundamental theorem
 #[
@@ -97,6 +105,9 @@ $
   #mk(4)~$Gamma tack t : tau$ \
   $==>$ $gamma(t) in R_tau$. By induction on #mk(4).
 ]
+
+#tagged([Termination], $ dot.c tack t : tau ==> t ~>^* v $)
+#tagged([Consistency], $ ¬(dot.c tack t : 0) $)
 
 *Case Var.*
 #row(
@@ -160,10 +171,7 @@ $
   pt(rule(name: [$0$], sh("a", $Gamma tack t : 0$), $Gamma tack absurd t : rho$)),
   pt(rule(
     rule(
-      rule(
-        rule(sh("a", $Gamma tack t : 0$), $gamma(t) in R_0$),
-        $gamma(t) ~>^* v$,
-      ),
+      rule(sh("a", $Gamma tack t : 0$), $gamma(t) in R_0 = emptyset$),
       $bot$,
     ),
     $absurd gamma(t) in R_rho$,
