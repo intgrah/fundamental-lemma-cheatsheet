@@ -170,10 +170,7 @@ $
 #row(
   pt(rule(name: [$0$], sh("a", $Gamma tack t : 0$), $Gamma tack absurd t : rho$)),
   pt(rule(
-    rule(
-      rule(sh("a", $Gamma tack t : 0$), $gamma(t) in R_0 = emptyset$),
-      $bot$,
-    ),
+    rule(sh("a", $Gamma tack t : 0$), $gamma(t) in R_0 = emptyset$),
     $absurd gamma(t) in R_rho$,
   )),
 )
