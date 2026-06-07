@@ -93,7 +93,7 @@ $
   $
 ]
 
-#tagged([Closure], $ dot.c tack t : T and t ~>^* t' ==> (t in R_T <==> t' in R_T) $)
+#tagged([Closure], $ dot.c tack t : tau and t ~>^* t' ==> (t in R_tau <==> t' in R_tau) $)
 
 = Fundamental theorem
 #[
