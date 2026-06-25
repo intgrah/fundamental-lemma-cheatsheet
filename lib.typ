@@ -36,5 +36,6 @@
     below: 0.5em,
     text(weight: "bold", size: 1em, it.body),
   )
+  
   body
 }

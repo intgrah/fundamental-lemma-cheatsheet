@@ -14,7 +14,7 @@
   "if",
 ).map(math.sans)
 #let ite(b, t, e) = $#math.sans("if") #b #math.sans("then") #t #math.sans("else") #e$
-#let fa = $scripts(lt.tri)$
+#let fa = $scripts(lt.closed)$
 #let ev = $scripts(arrow.b.double)$
 #let sem(t) = $bracket.l.stroked #t bracket.r.stroked$
 
